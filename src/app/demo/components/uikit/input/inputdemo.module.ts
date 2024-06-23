@@ -27,36 +27,38 @@ import { ToggleButtonModule } from 'primeng/togglebutton';
 import { SliderModule } from 'primeng/slider';
 import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
 import { InputGroupModule } from 'primeng/inputgroup';
+import {RippleModule} from "primeng/ripple";
 @NgModule({
-	imports: [
-		CommonModule,
-		FormsModule,
-		InputDemoRoutingModule,
-		AutoCompleteModule,
-		CalendarModule,
-		ChipsModule,
-		DropdownModule,
-		InputMaskModule,
-		InputNumberModule,
-		ColorPickerModule,
-		CascadeSelectModule,
-		MultiSelectModule,
-		ToggleButtonModule,
-		SliderModule,
-		InputTextareaModule,
-		RadioButtonModule,
-		InputTextModule,
-		RatingModule,
-		ChipModule,
-		KnobModule,
-		InputSwitchModule,
-		ListboxModule,
-		SelectButtonModule,
-		CheckboxModule,
-		ButtonModule,
-		InputGroupModule,
-		InputGroupAddonModule
-	],
+    imports: [
+        CommonModule,
+        FormsModule,
+        InputDemoRoutingModule,
+        AutoCompleteModule,
+        CalendarModule,
+        ChipsModule,
+        DropdownModule,
+        InputMaskModule,
+        InputNumberModule,
+        ColorPickerModule,
+        CascadeSelectModule,
+        MultiSelectModule,
+        ToggleButtonModule,
+        SliderModule,
+        InputTextareaModule,
+        RadioButtonModule,
+        InputTextModule,
+        RatingModule,
+        ChipModule,
+        KnobModule,
+        InputSwitchModule,
+        ListboxModule,
+        SelectButtonModule,
+        CheckboxModule,
+        ButtonModule,
+        InputGroupModule,
+        InputGroupAddonModule,
+        RippleModule
+    ],
 	declarations: [InputDemoComponent]
 })
 export class InputDemoModule { }

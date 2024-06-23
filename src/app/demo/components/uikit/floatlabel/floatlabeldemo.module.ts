@@ -15,24 +15,26 @@ import { InputTextareaModule } from "primeng/inputtextarea";
 import { InputTextModule } from "primeng/inputtext";
 import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
 import { InputGroupModule } from 'primeng/inputgroup';
+import {RippleModule} from "primeng/ripple";
 @NgModule({
-	imports: [
-		CommonModule,
-		FormsModule,
-		FloatlabelDemoRoutingModule,
-		AutoCompleteModule,
-		CalendarModule,
-		ChipsModule,
-		DropdownModule,
-		InputMaskModule,
-		InputNumberModule,
-		CascadeSelectModule,
-		MultiSelectModule,
-		InputTextareaModule,
-		InputTextModule,
-		InputGroupModule,
-		InputGroupAddonModule
-	],
+    imports: [
+        CommonModule,
+        FormsModule,
+        FloatlabelDemoRoutingModule,
+        AutoCompleteModule,
+        CalendarModule,
+        ChipsModule,
+        DropdownModule,
+        InputMaskModule,
+        InputNumberModule,
+        CascadeSelectModule,
+        MultiSelectModule,
+        InputTextareaModule,
+        InputTextModule,
+        InputGroupModule,
+        InputGroupAddonModule,
+        RippleModule
+    ],
 	declarations: [FloatLabelDemoComponent]
 })
 export class FloatlabelDemoModule { }

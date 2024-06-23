@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CountryService } from 'src/app/demo/service/country.service';
+import {MenuItem} from "primeng/api";
 
 @Component({
     templateUrl: './invalidstatedemo.component.html'
@@ -31,6 +32,13 @@ export class InvalidStateDemoComponent implements OnInit {
     value9: any;
 
     value10: any;
+    items: any[] = [
+
+    ];
+    reports: any[] = [
+        { DateTime: '2024-06-22 02:41:40', Address: 'Dirección 123', Incident: 'Asalto', TrackingLink: 'www.45ygr.wef', Image: 'https://i.imgur.com/VVjFRTj.jpeg' }
+    ];
+    selectedReport: any;
 
     constructor(private countryService: CountryService) {
         this.cities = [
@@ -62,5 +70,5 @@ export class InvalidStateDemoComponent implements OnInit {
 
         this.filteredCountries = filtered;
     }
-    
+
 }

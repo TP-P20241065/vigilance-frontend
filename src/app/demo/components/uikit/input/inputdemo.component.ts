@@ -6,7 +6,7 @@ import { CountryService } from 'src/app/demo/service/country.service';
     templateUrl: './inputdemo.component.html'
 })
 export class InputDemoComponent implements OnInit {
-    
+
     countries: any[] = [];
 
     filteredCountries: any[] = [];
@@ -42,6 +42,8 @@ export class InputDemoComponent implements OnInit {
     valSelect2: string = "";
 
     valueKnob = 20;
+    dropdownHeadquarters: any[] | undefined;
+    selectedHeadquarter: any;
 
     constructor(private countryService: CountryService) { }
 

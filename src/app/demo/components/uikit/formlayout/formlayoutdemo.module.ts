@@ -13,23 +13,27 @@ import { CascadeSelectModule } from "primeng/cascadeselect";
 import { MultiSelectModule } from "primeng/multiselect";
 import { InputTextareaModule } from "primeng/inputtextarea";
 import { InputTextModule } from "primeng/inputtext";
+import {CheckboxModule} from "primeng/checkbox";
+import {RippleModule} from "primeng/ripple";
 
 @NgModule({
-	imports: [
-		CommonModule,
-		FormsModule,
-		FormLayoutDemoRoutingModule,
-		AutoCompleteModule,
-		CalendarModule,
-		ChipsModule,
-		DropdownModule,
-		InputMaskModule,
-		InputNumberModule,
-		CascadeSelectModule,
-		MultiSelectModule,
-		InputTextareaModule,
-		InputTextModule
-	],
+    imports: [
+        CommonModule,
+        FormsModule,
+        FormLayoutDemoRoutingModule,
+        AutoCompleteModule,
+        CalendarModule,
+        ChipsModule,
+        DropdownModule,
+        InputMaskModule,
+        InputNumberModule,
+        CascadeSelectModule,
+        MultiSelectModule,
+        InputTextareaModule,
+        InputTextModule,
+        CheckboxModule,
+        RippleModule
+    ],
 	declarations: [FormLayoutDemoComponent]
 })
 export class FormLayoutDemoModule { }

@@ -14,24 +14,28 @@ import { MultiSelectModule } from "primeng/multiselect";
 import { InputTextareaModule } from "primeng/inputtextarea";
 import { InputTextModule } from "primeng/inputtext";
 import { PasswordModule } from "primeng/password";
+import {ContextMenuModule} from "primeng/contextmenu";
+import {TableModule} from "primeng/table";
 
 @NgModule({
-	imports: [
-		CommonModule,
-		FormsModule,
-		InvalidStateDemoRoutingModule,
-		AutoCompleteModule,
-		CalendarModule,
-		ChipsModule,
-		DropdownModule,
-		InputMaskModule,
-		InputNumberModule,
-		CascadeSelectModule,
-		MultiSelectModule,
-		PasswordModule,
-		InputTextareaModule,
-		InputTextModule
-	],
+    imports: [
+        CommonModule,
+        FormsModule,
+        InvalidStateDemoRoutingModule,
+        AutoCompleteModule,
+        CalendarModule,
+        ChipsModule,
+        DropdownModule,
+        InputMaskModule,
+        InputNumberModule,
+        CascadeSelectModule,
+        MultiSelectModule,
+        PasswordModule,
+        InputTextareaModule,
+        InputTextModule,
+        ContextMenuModule,
+        TableModule
+    ],
 	declarations: [InvalidStateDemoComponent]
 })
 export class InvalidStateDemoModule { }
