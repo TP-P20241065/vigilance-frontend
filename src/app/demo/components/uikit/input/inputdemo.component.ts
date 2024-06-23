@@ -42,7 +42,11 @@ export class InputDemoComponent implements OnInit {
     valSelect2: string = "";
 
     valueKnob = 20;
-    dropdownHeadquarters: any[] | undefined;
+    dropdownHeadquarters = [
+        { headquarter: 'Principal'},
+        { headquarter: 'Sede 1'},
+        { headquarter: 'Sede 2'}
+    ];
     selectedHeadquarter: any;
 
     constructor(private countryService: CountryService) { }

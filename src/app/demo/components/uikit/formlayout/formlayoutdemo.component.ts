@@ -16,9 +16,9 @@ export class FormLayoutDemoComponent {
     ];
 
     dropdownItems = [
-        { unitId: '0', code: '0' },
-        { unitId: '1', code: '1' },
-        { unitId: '2', code: '2' }
+        { unitId: '0'},
+        { unitId: '1'},
+        { unitId: '2'}
     ];
 
     cities1: any[] = [];
