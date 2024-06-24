@@ -1,9 +1,9 @@
 export interface Report  {
-    id?: number;
-    dateTime?: string;
-    address?: string;
-    incident?: number;
-    trackingLink?: string;
-    image?: string;
+    Id?: number;
+    DateTime?: string;
+    Address?: string;
+    Incident?: number;
+    TrackingLink?: string;
+    Image?: string;
 }
 
