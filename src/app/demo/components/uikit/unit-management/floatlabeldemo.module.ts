@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { FormLayoutDemoComponent } from './formlayoutdemo.component';
-import { FormLayoutDemoRoutingModule } from './formlayoutdemo-routing.module';
+import { FloatLabelDemoComponent } from './floatlabeldemo.component';
+import { FloatlabelDemoRoutingModule } from './floatlabeldemo-routing.module';
 import { AutoCompleteModule } from "primeng/autocomplete";
 import { CalendarModule } from "primeng/calendar";
 import { ChipsModule } from "primeng/chips";
@@ -13,14 +13,18 @@ import { CascadeSelectModule } from "primeng/cascadeselect";
 import { MultiSelectModule } from "primeng/multiselect";
 import { InputTextareaModule } from "primeng/inputtextarea";
 import { InputTextModule } from "primeng/inputtext";
-import {CheckboxModule} from "primeng/checkbox";
+import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
+import { InputGroupModule } from 'primeng/inputgroup';
 import {RippleModule} from "primeng/ripple";
-
+import {TableModule} from "primeng/table";
+import {ConfirmDialogModule} from "primeng/confirmdialog";
+import {ToastModule} from "primeng/toast";
+import {DialogModule} from "primeng/dialog";
 @NgModule({
     imports: [
         CommonModule,
         FormsModule,
-        FormLayoutDemoRoutingModule,
+        FloatlabelDemoRoutingModule,
         AutoCompleteModule,
         CalendarModule,
         ChipsModule,
@@ -31,9 +35,14 @@ import {RippleModule} from "primeng/ripple";
         MultiSelectModule,
         InputTextareaModule,
         InputTextModule,
-        CheckboxModule,
-        RippleModule
+        InputGroupModule,
+        InputGroupAddonModule,
+        RippleModule,
+        TableModule,
+        ConfirmDialogModule,
+        ToastModule,
+        DialogModule
     ],
-	declarations: [FormLayoutDemoComponent]
+	declarations: [FloatLabelDemoComponent]
 })
-export class FormLayoutDemoModule { }
+export class FloatlabelDemoModule { }

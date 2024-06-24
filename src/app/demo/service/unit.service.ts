@@ -6,11 +6,11 @@ import {TemplateService} from "../../shared/services/template.service";
 @Injectable({
     providedIn: 'root'
 })
-export class ReportService extends TemplateService<Report>{
+export class UnitService extends TemplateService<Report>{
 
     constructor(http: HttpClient) {
         super(http);
-        this.basePath = 'https://monitoring-backend-production-8dd2.up.railway.app/api/reports/search/incident';
+        this.basePath = 'https://monitoring-backend-production-8dd2.up.railway.app/api/units/';
         // API ficticia this.basePath = 'https://mockend.com/Ronald-Delgado-Del-Castillo/urprovider/suppliers';
     }
 }

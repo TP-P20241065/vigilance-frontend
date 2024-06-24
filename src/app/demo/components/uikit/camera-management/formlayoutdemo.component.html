@@ -1,0 +1,96 @@
+
+<div>
+
+    <p-toast />
+    <p-confirmDialog />
+    <p-contextMenu #cm [model]="items" appendTo="body"></p-contextMenu>
+    <p-table
+        #cameraList
+        [value]="dataCamera"
+        [paginator]="true"
+        [rows]="5"
+        [(contextMenuSelection)]="selectedReport"
+        [contextMenu]="cm"
+        [(selection)]="selectedCameras"
+        [rowHover]="true"
+        dataKey="id"
+        [globalFilterFields]="['Name', 'Location', 'directionIp', 'TrackingLink', 'Image']"
+        [tableStyle]="{'min-width': '50rem'}"
+        [rowsPerPageOptions]="[5, 10, 20]">
+
+        <ng-template pTemplate="caption">
+            <div class="flex">
+                <p-button icon="pi pi-plus" class="mr-2" (click)="openNew()"/>
+                <p-button icon="pi pi-print" class="mr-2"/>
+                <span class="p-input-icon-left ml-auto">
+                <i class="pi pi-search"></i>
+                <input pInputText type="text" [(ngModel)]="searchTerm" (input)="cameraList.filterGlobal($event.target.value, 'contains')" placeholder="Search keyword" />
+            </span>
+            </div>
+        </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Nombre</th>
+                <th>Dirección</th>
+                <th>Unidad</th>
+                <th>Enlace de rastreo</th>
+                <th>Imagen</th>
+                <th>Acciones</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-camera>
+            <tr [pContextMenuRow]="camera">
+                <td>{{camera.Name}}</td>
+                <td>{{camera.Location}}</td>
+                <td>{{[camera.UnitId]}}</td>
+                <td>implementar</td>
+                <td><p-tag severity="success" value="Disponible"/></td>
+                <td> <p-button
+                    pRipple
+                    icon="pi pi-pencil"
+                    class="mr-2"
+                    [rounded]="true"
+                    [outlined]="true"
+                    severity="success"
+                    (click)="editCamera(camera)" />
+
+                    <p-button
+                        pRipple
+                        icon="pi pi-trash"
+                        severity="danger"
+                        [rounded]="true"
+                        [outlined]="true"
+                        (click)="confirm1($event,camera)" />
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
+
+<!-- Diálogo para gestión de cámaras -->
+<p-dialog header="Gestión de cámaras" [(visible)]="cameraDialog" [modal]="true" [closable]="false" [style]="{width: '50vw'}">
+    <div>
+        <div>
+            <div class="card p-fluid">
+                <h5>Gestión de cámaras</h5>
+                <div class="field">
+                    <label htmlFor="name1">Nombre</label>
+                    <input pInputText id="name" type="text" [(ngModel)]="camera.Name"/>
+                </div>
+                <div class="field">
+                    <label htmlFor="location">Localización</label>
+                    <input pInputText id="location" type="text" [(ngModel)]="camera.Location"/>
+                </div>
+                <div class="field">
+                    <label htmlFor="state">Unidad</label>
+                    <p-dropdown [options]="dropdownItems" optionLabel="label" optionValue="value" [(ngModel)]="camera.UnitId"></p-dropdown>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                    <button pButton pRipple type="button" label="Guardar" (click)="saveCamera()"></button>
+                    <button pButton pRipple type="button" label="Cancelar" class="p-button-danger" (click)="cancel()"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</p-dialog>
+

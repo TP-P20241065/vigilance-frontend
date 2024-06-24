@@ -23,9 +23,9 @@ export class AppMenuComponent implements OnInit {
             {
                 label: 'Gestión administrativa',
                 items: [
-                    { label: 'Gestión de cámaras', icon: 'pi pi-fw pi-camera', routerLink: ['/uikit/formlayout'] },
-                    { label: 'Gestión de usuarios', icon: 'pi pi-fw pi-id-card', routerLink: ['/uikit/input'] },
-                    { label: 'Gestión de unidades', icon: 'pi pi-fw pi-users', routerLink: ['/uikit/floatlabel'] },
+                    { label: 'Gestión de cámaras', icon: 'pi pi-fw pi-camera', routerLink: ['/uikit/camera-management'] },
+                    { label: 'Gestión de usuarios', icon: 'pi pi-fw pi-id-card', routerLink: ['/uikit/user-management'] },
+                    { label: 'Gestión de unidades', icon: 'pi pi-fw pi-users', routerLink: ['/uikit/unit-management'] },
                     { label: 'Reporte de incidencias', icon: 'pi pi-fw pi-file-excel', routerLink: ['/uikit/invalidstate'] },
                 ]
             },

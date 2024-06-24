@@ -1,0 +1,82 @@
+{
+  "cameras": [
+    {
+      "id": "1",
+      "name": "sassass",
+      "location": "sassas",
+      "unity": {
+        "unitId": "2"
+      }
+    },
+    {
+      "id": "2",
+      "name": "Bamboo Watch",
+      "location": "Product Description",
+      "unity": 1
+    },
+    {
+      "id": "3",
+      "name": "Bamboo Watch",
+      "location": "Product Description",
+      "unity": 1
+    },
+    {
+      "id": "10ea",
+      "name": "cam-002",
+      "location": "al cotado del conductor",
+      "unity": {
+        "unitId": "1"
+      }
+    }
+  ],
+  "reports": [
+    {
+      "id": "1",
+      "dateTime": "sassass",
+      "address": "sassas",
+      "incident": "sasass",
+      "trackingLink": "2",
+      "image": "dsdsd"
+    },
+    {
+      "id": "2",
+      "dateTime": "accidente de trafuci",
+      "address": "accidente de trafuci",
+      "incident": "sasass",
+      "trackingLink": "2",
+      "image": "dsdsd"
+    },
+    {
+      "id": "3",
+      "dateTime": "sassass",
+      "address": "accidente de trafuci",
+      "incident": "sasass",
+      "trackingLink": "2",
+      "image": "dsdsd"
+    },
+    {
+      "id": "4",
+      "dateTime": " de trafuci",
+      "address": "sassas",
+      "incident": "sasass",
+      "trackingLink": "2",
+      "image": "dsdsd"
+    },
+    {
+      "id": "5",
+      "dateTime": "sasa de ddsds",
+      "address": "sassas",
+      "incident": "sasass",
+      "trackingLink": "2",
+      "image": "dsdsd"
+    },
+    {
+      "id": "6",
+      "dateTime": "sd",
+      "address": "cccc ccc",
+      "incident": "sassass ssa ass",
+      "trackingLink": "2",
+      "image": "dsdsd"
+    }
+  ]
+}

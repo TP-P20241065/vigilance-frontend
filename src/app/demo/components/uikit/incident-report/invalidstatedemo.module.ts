@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { FloatLabelDemoComponent } from './floatlabeldemo.component';
-import { FloatlabelDemoRoutingModule } from './floatlabeldemo-routing.module';
+import { InvalidStateDemoComponent } from './invalidstatedemo.component';
+import { InvalidStateDemoRoutingModule } from './invalidstatedemo-routing.module';
 import { AutoCompleteModule } from "primeng/autocomplete";
 import { CalendarModule } from "primeng/calendar";
 import { ChipsModule } from "primeng/chips";
@@ -13,14 +13,20 @@ import { CascadeSelectModule } from "primeng/cascadeselect";
 import { MultiSelectModule } from "primeng/multiselect";
 import { InputTextareaModule } from "primeng/inputtextarea";
 import { InputTextModule } from "primeng/inputtext";
-import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
-import { InputGroupModule } from 'primeng/inputgroup';
+import { PasswordModule } from "primeng/password";
+import {ContextMenuModule} from "primeng/contextmenu";
+import {TableModule} from "primeng/table";
+import {ConfirmDialogModule} from "primeng/confirmdialog";
+import {DialogModule} from "primeng/dialog";
 import {RippleModule} from "primeng/ripple";
+import {TagModule} from "primeng/tag";
+import {ToastModule} from "primeng/toast";
+
 @NgModule({
     imports: [
         CommonModule,
         FormsModule,
-        FloatlabelDemoRoutingModule,
+        InvalidStateDemoRoutingModule,
         AutoCompleteModule,
         CalendarModule,
         ChipsModule,
@@ -29,12 +35,17 @@ import {RippleModule} from "primeng/ripple";
         InputNumberModule,
         CascadeSelectModule,
         MultiSelectModule,
+        PasswordModule,
         InputTextareaModule,
         InputTextModule,
-        InputGroupModule,
-        InputGroupAddonModule,
-        RippleModule
+        ContextMenuModule,
+        TableModule,
+        ConfirmDialogModule,
+        DialogModule,
+        RippleModule,
+        TagModule,
+        ToastModule
     ],
-	declarations: [FloatLabelDemoComponent]
+	declarations: [InvalidStateDemoComponent]
 })
-export class FloatlabelDemoModule { }
+export class InvalidStateDemoModule { }
