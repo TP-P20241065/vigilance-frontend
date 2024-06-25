@@ -15,24 +15,34 @@ import { InputTextareaModule } from "primeng/inputtextarea";
 import { InputTextModule } from "primeng/inputtext";
 import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
 import { InputGroupModule } from 'primeng/inputgroup';
+import {RippleModule} from "primeng/ripple";
+import {TableModule} from "primeng/table";
+import {ConfirmDialogModule} from "primeng/confirmdialog";
+import {ToastModule} from "primeng/toast";
+import {DialogModule} from "primeng/dialog";
 @NgModule({
-	imports: [
-		CommonModule,
-		FormsModule,
-		FloatlabelDemoRoutingModule,
-		AutoCompleteModule,
-		CalendarModule,
-		ChipsModule,
-		DropdownModule,
-		InputMaskModule,
-		InputNumberModule,
-		CascadeSelectModule,
-		MultiSelectModule,
-		InputTextareaModule,
-		InputTextModule,
-		InputGroupModule,
-		InputGroupAddonModule
-	],
+    imports: [
+        CommonModule,
+        FormsModule,
+        FloatlabelDemoRoutingModule,
+        AutoCompleteModule,
+        CalendarModule,
+        ChipsModule,
+        DropdownModule,
+        InputMaskModule,
+        InputNumberModule,
+        CascadeSelectModule,
+        MultiSelectModule,
+        InputTextareaModule,
+        InputTextModule,
+        InputGroupModule,
+        InputGroupAddonModule,
+        RippleModule,
+        TableModule,
+        ConfirmDialogModule,
+        ToastModule,
+        DialogModule
+    ],
 	declarations: [FloatLabelDemoComponent]
 })
 export class FloatlabelDemoModule { }

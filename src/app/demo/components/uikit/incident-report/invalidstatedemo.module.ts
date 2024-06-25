@@ -14,24 +14,38 @@ import { MultiSelectModule } from "primeng/multiselect";
 import { InputTextareaModule } from "primeng/inputtextarea";
 import { InputTextModule } from "primeng/inputtext";
 import { PasswordModule } from "primeng/password";
+import {ContextMenuModule} from "primeng/contextmenu";
+import {TableModule} from "primeng/table";
+import {ConfirmDialogModule} from "primeng/confirmdialog";
+import {DialogModule} from "primeng/dialog";
+import {RippleModule} from "primeng/ripple";
+import {TagModule} from "primeng/tag";
+import {ToastModule} from "primeng/toast";
 
 @NgModule({
-	imports: [
-		CommonModule,
-		FormsModule,
-		InvalidStateDemoRoutingModule,
-		AutoCompleteModule,
-		CalendarModule,
-		ChipsModule,
-		DropdownModule,
-		InputMaskModule,
-		InputNumberModule,
-		CascadeSelectModule,
-		MultiSelectModule,
-		PasswordModule,
-		InputTextareaModule,
-		InputTextModule
-	],
+    imports: [
+        CommonModule,
+        FormsModule,
+        InvalidStateDemoRoutingModule,
+        AutoCompleteModule,
+        CalendarModule,
+        ChipsModule,
+        DropdownModule,
+        InputMaskModule,
+        InputNumberModule,
+        CascadeSelectModule,
+        MultiSelectModule,
+        PasswordModule,
+        InputTextareaModule,
+        InputTextModule,
+        ContextMenuModule,
+        TableModule,
+        ConfirmDialogModule,
+        DialogModule,
+        RippleModule,
+        TagModule,
+        ToastModule
+    ],
 	declarations: [InvalidStateDemoComponent]
 })
 export class InvalidStateDemoModule { }

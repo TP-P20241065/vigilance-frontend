@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+    dataUrlToken: 'DATA_URL_TOKEN'
 };

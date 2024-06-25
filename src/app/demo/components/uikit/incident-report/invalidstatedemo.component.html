@@ -1,0 +1,47 @@
+
+<div>
+    <p-contextMenu #cm [model]="items" appendTo="body"></p-contextMenu>
+    <p-table
+        #cameraList
+        [value]="dataIncidents"
+        [paginator]="true"
+        [rows]="5"
+        [contextMenu]="cm"
+        [rowHover]="true"
+        dataKey="id"
+        [globalFilterFields]="['DateTime', 'Address', 'Incident', 'TrackingLink', 'Image']"
+        [tableStyle]="{'min-width': '50rem'}"
+        [rowsPerPageOptions]="[5, 10, 20]">
+
+        <ng-template pTemplate="caption">
+            <div class="flex">
+                <p-button icon="pi pi-print" class="mr-2" (click)="generateExcelReport()"/>
+                <span class="p-input-icon-left ml-auto">
+                <i class="pi pi-search"></i>
+                <input pInputText type="text" [(ngModel)]="searchTerm" (input)="cameraList.filterGlobal($event.target.value, 'contains')" placeholder="Search keyword" />
+            </span>
+            </div>
+        </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Fecha</th>
+                <th>Dirección</th>
+                <th>Incidente</th>
+                <th>Enlace de rastreo</th>
+                <th>Imagen</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-camera>
+            <tr [pContextMenuRow]="camera">
+                <td>{{camera.DateTime}}</td>
+                <td>{{camera.Address}}</td>
+                <td>{{camera.Incident}}</td>
+                <td>{{camera.TrackingLink}}</td>
+                <td>{{camera.Image}}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
+
+
+

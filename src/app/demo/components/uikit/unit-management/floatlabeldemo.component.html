@@ -1,0 +1,71 @@
+<div>
+    <p-toast/>
+    <p-confirmDialog/>
+    <p-table
+        #unitList
+        [value]="dataUnit"
+        [paginator]="true"
+        [rows]="5"
+        [rowHover]="true"
+        dataKey="id"
+        [globalFilterFields]="['Driver']"
+        [tableStyle]="{'min-width': '50rem'}"
+        [rowsPerPageOptions]="[5, 10, 20]">
+
+        <ng-template pTemplate="caption">
+            <div class="flex">
+                <p-button icon="pi pi-plus" class="mr-2" (click)="openNew()"/>
+                <p-button icon="pi pi-print" class="mr-2"/>
+                <span class="p-input-icon-left ml-auto">
+                <i class="pi pi-search"></i>
+                <input pInputText type="text" [(ngModel)]="searchTerm"
+                       (input)="unitList.filterGlobal($event.target.value, 'contains')" placeholder="Search keyword"/>
+            </span>
+            </div>
+        </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Conductor</th>
+                <th>Acciones</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-unit>
+            <tr [pContextMenuRow]="unit">
+                <td>{{ unit.Driver }}</td>
+                <td><p-button
+                    pRipple
+                    icon="pi pi-pencil"
+                    class="mr-2"
+                    [rounded]="true"
+                    [outlined]="true"
+                    severity="success"
+                    (click)="editUnit(unit)" />
+
+                    <p-button
+                        pRipple
+                        icon="pi pi-trash"
+                        severity="danger"
+                        [rounded]="true"
+                        [outlined]="true"
+                        (click)="deleteUnit($event,unit)" /></td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
+<!-- Diálogo para gestión de unidades -->
+
+<p-dialog header="Gestión de cámaras" [(visible)]="unitDialog" [modal]="true" [closable]="false"
+          [style]="{width: '50vw'}">
+            <div class="card p-fluid">
+                <h5>Gestión de unidades</h5>
+                <div class="field">
+                    <label htmlFor="driver1">Conductor</label>
+                    <input pInputText id="driver" type="text" [(ngModel)]="unit.Driver"/>
+                </div>
+                <div class="flex flex-wrap gap-2  " >
+                    <button pButton pRipple type="button" label="Guardar" (click)="saveUnit()"></button>
+                    <button pButton pRipple type="button" label="Cancelar" class="p-button-danger" (click)="cancel()"></button>
+                </div>
+            </div>
+
+</p-dialog>
