@@ -26,13 +26,11 @@
         <ng-template pTemplate="header">
             <tr>
                 <th>Conductor</th>
-                <th>Imagen</th>
                 <th>Acciones</th>
             </tr>
         </ng-template>
         <ng-template pTemplate="body" let-unit>
             <tr [pContextMenuRow]="unit">
-                <td>{{ unit.Driver }}</td>
                 <td>{{ unit.Driver }}</td>
                 <td><p-button
                     pRipple
