@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
+import {HttpClient, HttpErrorResponse, HttpHeaders, HttpParams} from "@angular/common/http";
 import {catchError, Observable, retry, throwError} from "rxjs";
+import { environment } from '../../../environments/environment';
 
 @Injectable({
     providedIn: 'root'
@@ -60,4 +61,38 @@ export class TemplateService<T> {
             JSON.stringify(item), this.httpOptions)
             .pipe(retry(2), catchError(this.handleError));
     }
+    login(email: string, password: string): Observable<T> {
+        const params = new HttpParams()
+            .set('grant_type', '')  // Deja el campo vacío si no se requiere valor
+            .set('username', email)
+            .set('password', password)
+            .set('scope', '')  // Deja el campo vacío si no se requiere valor
+            .set('client_id', '')  // Deja el campo vacío si no se requiere valor
+            .set('client_secret', '');  // Deja el campo vacío si no se requiere valor
+
+        return this.http.post<any>(`${this.basePath}/token/`, params.toString(), {
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }
+        });
+    }
+
+    resetPassword(user_id: any): Observable<T> {
+        console.log(user_id)
+        return this.http.patch<T>( `${this.basePath}${user_id}`,this.httpOptions)
+            .pipe( retry(2), catchError(this.handleError));
+    }
+
+    searchUserByEmail(email: any): Observable<T> {
+        const params = new HttpParams().set('email', email);
+            // URL completa con parámetros convertidos a cadena
+        const url = `${this.basePath}search/?${params.toString()}`;
+
+        return this.http.get<T>(
+            url, this.httpOptions)
+            .pipe(
+                retry(2),
+                catchError(this.handleError));
+    }
 }
+

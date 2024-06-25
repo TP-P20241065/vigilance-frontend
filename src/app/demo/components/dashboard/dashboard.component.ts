@@ -10,6 +10,8 @@ import { LayoutService } from 'src/app/layout/service/app.layout.service';
 })
 export class DashboardComponent implements OnInit, OnDestroy {
 
+    token : any = localStorage.getItem('token');
+
     items!: MenuItem[];
 
     products!: Product[];
@@ -25,6 +27,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
         .pipe(debounceTime(25))
         .subscribe((config) => {
             this.initChart();
+
+
         });
     }
 

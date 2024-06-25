@@ -8,7 +8,7 @@
         [rows]="5"
         [rowHover]="true"
         dataKey="id"
-        [globalFilterFields]="['Driver']"
+        [globalFilterFields]="['Username','Username','Username',]"
         [tableStyle]="{'min-width': '50rem'}"
         [rowsPerPageOptions]="[5, 10, 20]">
 
@@ -86,9 +86,14 @@
                 <input pInputText id="lastName" type="text" [(ngModel)]="user.LastName"/>
             </div>
             <div class="field">
-                <label htmlFor="email1">Correo</label>
-                <input pInputText id="email1" type="text" [(ngModel)]="user.Email"/>
+                <label for="email1">Correo</label>
+                <input pInputText id="email1" type="email" [(ngModel)]="user.Email" #email="ngModel" required email />
+                <div *ngIf="email.invalid && (email.dirty || email.touched)" class="error">
+                    <div *ngIf="email.errors.required">El correo es obligatorio.</div>
+                    <div *ngIf="email.errors.email">Formato de correo inválido.</div>
+                </div>
             </div>
+
             <div class="field">
                 <label htmlFor="state">Sede</label>
                 <p-dropdown [options]="dropdownHeadquarters" optionLabel="label" optionValue="value"

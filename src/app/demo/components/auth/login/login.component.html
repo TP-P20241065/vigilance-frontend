@@ -1,4 +1,7 @@
+<p-toast/>
+<p-confirmDialog/>
 <div class="surface-ground flex align-items-center justify-content-center min-h-screen min-w-screen overflow-hidden">
+
     <div class="flex flex-column align-items-center justify-content-center">
         <div style="border-radius:56px; padding:0.3rem; background: linear-gradient(180deg, var(--primary-color) 10%, rgba(33, 150, 243, 0) 30%);">
             <div class="w-full surface-card py-8 px-5 sm:px-8" style="border-radius:53px">
@@ -6,18 +9,38 @@
                     <h1 class="text-900 font-bold text-5xl mb-2">Iniciar sesión</h1>
                 </div>
                 <div>
-                    <label for="email1" class="block text-900 text-xl font-medium mb-2">Usuario</label>
-                    <input id="email1" type="text" placeholder="Usuario" pInputText class="w-full md:w-30rem mb-5" style="padding:1rem">
+                    <label for="email1" class="block text-900 text-xl font-medium mb-2">Correo</label>
+                    <input id="email1" type="text" placeholder="Usuario" pInputText class="w-full md:w-30rem mb-5" style="padding:1rem" [(ngModel)]="user.username">
 
                     <label for="password1" class="block text-900 font-medium text-xl mb-2">Contraseña</label>
-                    <p-password id="password1" [(ngModel)]="password" placeholder="Contraseña" [toggleMask]="true" styleClass="mb-5" inputStyleClass="w-full p-3 md:w-30rem"></p-password>
+                    <p-password id="password1" [(ngModel)]="user.password" placeholder="Contraseña" [toggleMask]="true" styleClass="mb-5" inputStyleClass="w-full p-3 md:w-30rem"></p-password>
 
                     <div class="flex align-items-center justify-content-between mb-5 gap-5">
-                        <a class="font-medium no-underline ml-2 text-right cursor-pointer" style="color: var(--primary-color)">¿Olvidaste tu contraseña?</a>
+                        <a class="font-medium no-underline ml-2 text-right cursor-pointer" style="color: var(--primary-color)" (click)="changePassword()">¿Olvidaste tu contraseña?</a>
                     </div>
-                    <button pButton pRipple label="Iniciar sesión" class="w-full p-3 text-xl" [routerLink]="['/']"></button>
+                    <button pButton pRipple label="Iniciar sesión" class="w-full p-3 text-xl" (click)="login()" ></button>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<!-- Diálogo para gestión de cámaras -->
+<p-dialog header="Recuperar contraseña" [(visible)]="resetPasswordDialog" [modal]="true" [closable]="false" [style]="{width: '50vw'}">
+    <div>
+        <h1>{{userRecovery.Id}}</h1>
+        <div>
+            <div class="card p-fluid">
+                <h5>Recuperar contraseña</h5>
+                <div class="field">
+                    <label htmlFor="name1">Nombre</label>
+                    <input pInputText id="name" type="text" [(ngModel)]="user.username"/>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                    <button pButton pRipple type="button" label="Confirmar" (click)="resetPassword()"></button>
+                    <button pButton pRipple type="button" label="Cancelar" class="p-button-danger" (click)="cancel()"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</p-dialog>
+

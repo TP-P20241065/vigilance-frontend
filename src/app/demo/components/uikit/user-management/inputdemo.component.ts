@@ -80,7 +80,35 @@ export class InputDemoComponent implements OnInit {
         this.userDialog = true;
     }
 
-    deleteUser($event: MouseEvent, user: any) {
+    deleteUser(event: Event, camera: Camera) {
+        this.confirmationService.confirm({
+            target: event.target as EventTarget,
+            message: 'Estas seguro que deseas eliminar?',
+            header: 'Confirmar',
+            icon: 'pi pi-exclamation-triangle',
+            accept: () => {
+                this.userService.delete(camera.Id!).subscribe(() => {
+                        this.dataUser = this.dataUser.filter((o: Camera) => o.Id !== camera.Id);
+                        this.messageService.add({
+                            severity: 'info',
+                            summary: 'Confirmed',
+                            detail: 'Camera Deleted',
+                            life: 3000
+                        });
+                    },
+                    (error) => {
+                        console.error('Error al eliminar la user:', error);  // Manejar el error
+                    });
+            },
+            reject: () => {
+                this.messageService.add({
+                    severity: 'error',
+                    summary: 'Rejected',
+                    detail: 'You have rejected',
+                    life: 3000
+                });
+            }
+        });
 
     }
 
